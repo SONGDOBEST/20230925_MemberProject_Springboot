@@ -6,14 +6,13 @@
 <body>
 <div th:replace="~{component/header :: header}"></div>
 <div th:replace="~{component/nav :: nav}"></div>
-<h2>로그인 페이지</h2>
+
 <div class="container">
-  <form action="/member/login" method="post">
-    이메일 :<input type="text" name="memberEmail" placeholder="이메일 입력"> <br>
-    비밀번호 :<input type="text" name="memberPassword" placeholder="비밀번호 입력"> <br>
-    <input type="submit" value="로그인">
-  </form>
+  <!-- 화면에 보여질 내용이 들어갈 부분 -->
+
 </div>
+
 <div th:replace="~{component/footer :: footer}"></div>
+
 </body>
 </html>

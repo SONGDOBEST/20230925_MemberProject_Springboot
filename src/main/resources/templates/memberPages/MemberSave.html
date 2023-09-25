@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>회원가입</title>
+  <th:block th:replace="~{component/config :: config}"></th:block>
 </head>
 <body>
+<div th:replace="~{component/header :: header}"></div>
+<div th:replace="~{component/nav :: nav}"></div>
 <h2>회원가입페이지</h2>
-<div id="container" th:replace="~{component/header :: header}"></div>
+<div class="container">
   <form action="/member/save" method="post">
     <input type="text" placeholder="이메일을 입력하세요" name="memberEmail"> <br>
     <input type="text" placeholder="비밀번호를 입력하세요" name="memberPassword"> <br>
@@ -15,8 +16,8 @@
     <input type="date" name="memberBirth">
     <input type="submit" value="회원가입">
   </form>
-
+</div>
+<div th:replace="~{component/footer :: footer}"></div>
 </body>
-
 </div>
 </html>
