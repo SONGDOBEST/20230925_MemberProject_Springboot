@@ -37,4 +37,5 @@ public class MemberEntity {
         memberEntity.setMemberPassword(memberDTO.getMemberPassword());
         return memberEntity;
     }
+
 }

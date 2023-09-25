@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>내 정보</h2>
+<p th:text="|이름: ${session.loginMember.memberName}|"></p> <br>
+<p th:hidden="|${session.loginMember.id}|"></p> <br>
+<p th:text="|이메일: ${session.loginMember.memberEmail}|"></p> <br>
+<p th:text="|생일: ${session.loginMember.memberBirth}|"></p> <br>
+<p th:text="|핸드폰: ${session.loginMember.memberMobile}|"></p> <br>
+<p th:text="|비밀번호: ${session.loginMember.memberPassword}|"></p>
+</body>
+</html>

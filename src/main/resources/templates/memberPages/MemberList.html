@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>목록</title>
+</head>
+<body>
+<h2>회원목록페이지</h2>
+<div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>이메일</th>
+            <th>비밀번호</th>
+            <th>이름</th>
+            <th>생년월일</th>
+            <th>핸드폰번호</th>
+            <th>삭제</th>
+        </tr>
+        <tr th:each="member:${MemberList}">
+            <td>
+                <a th:href="@{|/member/${member.id}|}" th:text="${member.id}"></a>
+            </td>
+            <td th:text="|이메일: ${member.memberEmail}|"></td>
+            <td th:text="|비밀번호: ${member.memberPassword}|"></td>
+            <td th:text="|이름: ${member.memberName}|"></td>
+            <td th:text="|생년월일: ${member.memberBirth}|"></td>
+            <td th:text="|핸드폰번호: ${member.memberMobile}|"></td>
+            <td><button class="btn btn-danger" th:onclick="delete_fn([[${member.id}]])">삭제</button></td>
+        </tr>
+    </table>
+</div>
+</body>
+<script th:inline="javascript">
+    <!--추후 삭제기능 업데이트(수정은 각자의 마이페이지에서 가능하도록 할 예정)-->
+    const delete_fn = (id) =>{
+        location.href="/member/delete/"+id;
+    }
+</script>
+
+</html>
